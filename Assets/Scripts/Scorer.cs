@@ -6,7 +6,11 @@ public class Scorer : MonoBehaviour {
     int score = 0;
 
     private void OnCollisionEnter(Collision other) {
-        score += 1;
-        Debug.Log("Score: " + score);
+        
+        if (!other.gameObject.CompareTag("Hit")) {
+            score += 1;
+            Debug.Log("Score: " + score);
+        }
+
     }
 }
